@@ -7,9 +7,6 @@ class Atleta {
     this.peso = peso;
     this.altura = altura;
     this.notas = notas;
-    this.categoria = this.calculaCategoria();
-    this.imc = this.calculaIMC();
-    this.mediaValida = this.calculaMediaValida();
   }
 
   calculaCategoria() {
@@ -35,9 +32,7 @@ class Atleta {
     let notasValidas = notasOrdenadas.slice(1, notasOrdenadas.length - 1);
 
     let soma = 0;
-    notasValidas.forEach(nota => {
-      soma += nota;
-    });
+    notasValidas.forEach(nota => soma += nota);
 
     return soma / notasValidas.length;
   }
@@ -59,15 +54,15 @@ class Atleta {
   }
 
   obtemCategoria() {
-    return this.categoria;
+    return this.calculaCategoria();
   }
 
   obtemIMC() {
-    return this.imc;
+    return this.calculaIMC();
   }
 
   obtemMediaValida() {
-    return this.mediaValida;
+    return this.calculaMediaValida();
   }
 
 }
